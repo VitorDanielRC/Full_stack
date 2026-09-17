@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+
+<div class="card">
+
+    <h2>
+        Excluir Livro
+    </h2>
+
+    <p>
+        Tem certeza que deseja excluir:
+    </p>
+
+    <h3>
+        {{ livro.titulo }}
+    </h3>
+
+    <p>
+        Autor: {{ livro.autor }}
+    </p>
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <button
+            class="botao botao-excluir"
+            type="submit"
+        >
+            Sim, excluir
+        </button>
+
+
+        <a
+            class="botao"
+            href="{% url 'lista' %}"
+        >
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+
+
+{% endblock %}
