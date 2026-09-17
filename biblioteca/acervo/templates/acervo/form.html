@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+
+<div class="card">
+
+    <h2>
+        {{ titulo_pagina }}
+    </h2>
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+
+        <button
+            class="botao"
+            type="submit"
+        >
+            Salvar
+        </button>
+
+
+        <a
+            class="botao"
+            href="{% url 'lista' %}"
+        >
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+
+
+{% endblock %}
