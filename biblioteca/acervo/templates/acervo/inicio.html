@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+
+<div class="card">
+
+    <h2>
+        Bem-vindo à Biblioteca
+    </h2>
+
+    <p>
+        Sistema para cadastrar e gerenciar livros.
+    </p>
+
+    <a
+        class="botao"
+        href="{% url 'lista' %}"
+    >
+        Ver Livros
+    </a>
+
+    <a
+        class="botao"
+        href="{% url 'novo_livro' %}"
+    >
+        Cadastrar Livro
+    </a>
+
+</div>
+
+
+<div class="cards">
+
+    <div class="card">
+
+        <h3>
+            Total de Livros
+        </h3>
+
+        <div class="numero">
+            {{ total_livros }}
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Disponíveis
+        </h3>
+
+        <div class="numero">
+            {{ disponiveis }}
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Indisponíveis
+        </h3>
+
+        <div class="numero">
+            {{ indisponiveis }}
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
